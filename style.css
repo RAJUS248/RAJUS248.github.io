@@ -1088,3 +1088,41 @@ input:focus, textarea:focus {
   border-radius: 8px;
   display: inline-block;
 }
+
+/* Swiper container fix */
+.mySwiper {
+  width: 100%;
+  padding: 2rem 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* Centered slide styling */
+.swiper-slide {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 85vw; /* only 85% of viewport to allow edge peeking */
+  box-sizing: border-box;
+}
+
+/* Ensure container doesn’t overflow in mobile */
+#projects,
+#certificates {
+  padding: 0 0.5rem;  /* slight side padding */
+  text-align: left;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.swiper-slide {
+  width: 85vw;
+  margin-right: -15px; /* optional for overlap look */
+}
