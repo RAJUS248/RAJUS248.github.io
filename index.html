@@ -47,7 +47,8 @@
   <div class="logo"></div>
   
   <!-- Hamburger Icon -->
-  <div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger" id="hamburger">
+
     <span></span>
     <span></span>
     <span></span>
@@ -308,20 +309,23 @@
   </script>
 </body>
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
 
-  // Hide menu after clicking a link
-  document.querySelectorAll('#navLinks a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
     });
   });
 </script>
+
+
 
 
 
