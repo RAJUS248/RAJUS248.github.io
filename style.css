@@ -980,3 +980,60 @@ input:focus, textarea:focus {
     display: flex;
   }
 }
+
+
+/* Section padding reset for mobile */
+#projects {
+  padding: 1rem 0;
+  background: #121212;
+  color: white;
+  text-align: center;
+}
+
+/* Swiper styles */
+.mySwiper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-wrapper {
+  padding-left: 0;
+}
+
+.swiper-slide {
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 16px;
+  width: 85%; /* Important: controls the size */
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+}
+
+/* Image & content styling */
+.swiper-slide img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.swiper-slide h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.swiper-slide p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.swiper-slide a {
+  text-decoration: none;
+  color: white;
+  background: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+}
