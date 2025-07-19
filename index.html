@@ -315,14 +315,14 @@
     navLinks.classList.toggle('active');
   });
 
-  // Hide navbar after clicking a link
-  const links = document.querySelectorAll('#navLinks a');
-  links.forEach(link => {
+  // Hide menu after clicking a link
+  document.querySelectorAll('#navLinks a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
     });
   });
 </script>
+
 
 
 
