@@ -43,18 +43,28 @@
         <main class="main-content">
 
       <!-- Navbar inside Main -->
-      <nav class="navbar">
-        <div class="logo">Raju S Baradur</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certificates</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#hobbies">Hobbies</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<nav class="navbar">
+  <div class="logo">Raju S Baradur</div>
+  
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certificates</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#hobbies">Hobbies</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
 
       <section id="about" class="section">
         <h1>About Me</h1>
@@ -274,5 +284,11 @@
     });
   </script>
 </body>
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
 
 </html>
