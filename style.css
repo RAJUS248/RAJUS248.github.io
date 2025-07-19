@@ -852,5 +852,39 @@ input:focus, textarea:focus {
 .github-link:hover {
   background: #444;
 }
+/* Ensure swiper container is centered */
+.projects .swiper {
+  padding: 0 1rem; /* slight side padding */
+  display: flex;
+  justify-content: center;
+}
+
+/* Center slides and make them take full width on small screens */
+.projects .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Make project card responsive */
+.project-card {
+  width: 100%;
+  max-width: 300px; /* You can adjust this */
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .projects {
+    padding: 1rem 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .swiper {
+    padding: 0; /* Remove default swiper padding */
+  }
+
+  .swiper-slide {
+    padding: 0;
+  }
+}
 
 
