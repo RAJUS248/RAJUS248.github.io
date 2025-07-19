@@ -865,10 +865,42 @@ input:focus, textarea:focus {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust based on your navbar height */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+.navbar {
+  z-index: 999;
+  position: relative;
+}
 
 
