@@ -852,6 +852,7 @@ input:focus, textarea:focus {
 .github-link:hover {
   background: #444;
 }
+
 /* Ensure swiper container is centered */
 .projects .swiper {
   padding: 0 1rem; /* slight side padding */
@@ -871,6 +872,7 @@ input:focus, textarea:focus {
   max-width: 300px; /* You can adjust this */
   margin: 0 auto;
 }
+
 @media (max-width: 768px) {
   .projects {
     padding: 1rem 0;
@@ -886,5 +888,4 @@ input:focus, textarea:focus {
     padding: 0;
   }
 }
-
 
