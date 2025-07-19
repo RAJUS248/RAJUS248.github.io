@@ -987,7 +987,7 @@ input:focus, textarea:focus {
   padding: 1rem 0;
   background: #121212;
   color: white;
-  text-align: center;
+  text-align: left;
 }
 
 /* Swiper styles */
