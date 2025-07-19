@@ -162,56 +162,40 @@
 </section>
 
  <!-- Projects Section with Scrolling -->
-<section id="projects" class="section">
+<!-- Project Section -->
+<section id="projects">
   <h2>🚀 Projects</h2>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-
-      <!-- Project 1 -->
-      <div class="swiper-slide project-card">
-        <img src="Nail.jpg" alt="UNO Game">
+      <div class="swiper-slide">
+        <img src="Nail.jpg" alt="Project 1">
         <h3>UNO Multiplayer Game</h3>
         <p>Multiplayer UNO game using React + Node.js.</p>
-        <a href="https://github.com/yourusername/uno-project" target="_blank" class="github-link">
-          <i class="fab fa-github"></i> View Code
-        </a>
+        <a href="#">🔗 View Code</a>
       </div>
-
-      <!-- Project 1 -->
-      <div class="swiper-slide project-card">
-        <img src="Nail.jpg" alt="UNO Game">
-        <h3>UNO Multiplayer Game</h3>
-        <p>Multiplayer UNO game using React + Node.js.</p>
-        <a href="https://github.com/yourusername/uno-project" target="_blank" class="github-link">
-          <i class="fab fa-github"></i> View Code
-        </a>
+      <div class="swiper-slide">
+        <img src="Nail.jpg" alt="Project 2">
+        <h3>Nail Disease Detection</h3>
+        <p>Real-time nail disease detection using YOLOv8.</p>
+        <a href="#">🔗 View Code</a>
       </div>
-
-      <!-- Project 1 -->
-      <div class="swiper-slide project-card">
-        <img src="Nail.jpg" alt="UNO Game">
-        <h3>UNO Multiplayer Game</h3>
-        <p>Multiplayer UNO game using React + Node.js.</p>
-        <a href="https://github.com/yourusername/uno-project" target="_blank" class="github-link">
-          <i class="fab fa-github"></i> View Code
-        </a>
+      <div class="swiper-slide">
+        <img src="Nail.jpg" alt="Project 2">
+        <h3>Nail Disease Detection</h3>
+        <p>Real-time nail disease detection using YOLOv8.</p>
+        <a href="#">🔗 View Code</a>
       </div>
-
-      <!-- Project 1 -->
-      <div class="swiper-slide project-card">
-        <img src="Nail.jpg" alt="UNO Game">
-        <h3>UNO Multiplayer Game</h3>
-        <p>Multiplayer UNO game using React + Node.js.</p>
-        <a href="https://github.com/yourusername/uno-project" target="_blank" class="github-link">
-          <i class="fab fa-github"></i> View Code
-        </a>
+      <div class="swiper-slide">
+        <img src="Nail.jpg" alt="Project 2">
+        <h3>Nail Disease Detection</h3>
+        <p>Real-time nail disease detection using YOLOv8.</p>
+        <a href="#">🔗 View Code</a>
       </div>
-
-      <!-- Add more swiper-slide project-cards here if needed -->
-
+      <!-- Add more slides -->
     </div>
   </div>
 </section>
+
 
 
 
@@ -283,30 +267,25 @@
   <!-- JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      loop: true,
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        600: {
-          slidesPerView: 'auto',
-          spaceBetween: -80,
-        }
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        centeredSlides: false,
       },
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 150,
-        modifier: 1,
-        slideShadows: false,
-      },
-    });
-  </script>
+      1024: {
+        slidesPerView: 3,
+        centeredSlides: false,
+      }
+    }
+  });
+</script>
+
   
 </body>
 <script>
