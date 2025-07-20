@@ -29,9 +29,16 @@
       max-width: 400px;
     }
 
-    #score {
-      font-size: 1rem;
+    .score-container {
+      display: flex;
+      gap: 1rem;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .score-box {
+      font-size: 1rem;
       background: #1f1f1f;
       padding: 10px 20px;
       border-radius: 10px;
@@ -71,10 +78,11 @@
 <body>
   <h1>🐍 Snake Game</h1>
   <div id="info">Eat red blocks to grow. Game speeds up as score increases. Use arrow keys (or buttons below) to control the snake.</div>
-  <div style="display: flex; gap: 2rem; margin-bottom: 1rem;">
-  <div id="highScore">🏆 High Score: 0</div>
-  <div id="score">Score: 0 | Level: 1</div>
-</div>
+
+  <div class="score-container">
+    <div id="highScore" class="score-box">🏆 High Score: 0</div>
+    <div id="score" class="score-box">Score: 0 | Level: 1</div>
+  </div>
 
   <canvas id="gameCanvas" width="400" height="400"></canvas>
 
@@ -91,11 +99,11 @@
   <script>
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
-    const scoreEl = document.getElementById("score");
-const highScoreEl = document.getElementById("highScore");
-let highScore = localStorage.getItem("snakeHighScore") || 0;
-highScoreEl.textContent = `🏆 High Score: ${highScore}`;
 
+    const scoreEl = document.getElementById("score");
+    const highScoreEl = document.getElementById("highScore");
+    let highScore = localStorage.getItem("snakeHighScore") || 0;
+    highScoreEl.textContent = `🏆 High Score: ${highScore}`;
 
     const box = 20;
     const canvasSize = 400;
@@ -127,18 +135,17 @@ highScoreEl.textContent = `🏆 High Score: ${highScore}`;
     }
 
     function updateScore() {
-  if (score > highScore) {
-    highScore = score;
-    localStorage.setItem("snakeHighScore", highScore);
-  }
-  highScoreEl.textContent = `🏆 High Score: ${highScore}`;
-  scoreEl.textContent = `Score: ${score} | Level: ${level}`;
-}
-
+      if (score > highScore) {
+        highScore = score;
+        localStorage.setItem("snakeHighScore", highScore);
+      }
+      highScoreEl.textContent = `🏆 High Score: ${highScore}`;
+      scoreEl.textContent = `Score: ${score} | Level: ${level}`;
+    }
 
     function increaseLevel() {
       level++;
-      speed = Math.max(60, speed - 20); // speed up but not below 60ms
+      speed = Math.max(60, speed - 20); // cap speed
       clearInterval(game);
       game = setInterval(draw, speed);
     }
@@ -160,7 +167,6 @@ highScoreEl.textContent = `🏆 High Score: ${highScore}`;
 
       if (direction === "UP") snakeY -= box;
       if (direction === "LEFT") snakeX -= box;
-      
       if (direction === "RIGHT") snakeX += box;
       if (direction === "DOWN") snakeY += box;
 
