@@ -1126,3 +1126,135 @@ input:focus, textarea:focus {
   width: 85vw;
   margin-right: -15px; /* optional for overlap look */
 }
+
+#projects {
+  padding: 2rem 1rem;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+}
+
+.swiper {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.swiper-wrapper {
+  padding-left: 10px; /* to prevent side gaps */
+}
+
+.swiper-slide {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  text-align: center;
+  width: 85%; /* Let it peek behind */
+  max-width: 320px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.swiper-slide h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.swiper-slide p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.swiper-slide a {
+  text-decoration: none;
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: #888;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00ff88;
+}
+
+.swiper-slide {
+  width: 85vw; /* fixed width */
+  max-width: 320px;
+}
+
+/* Swiper general styling */
+.swiper {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.swiper-slide {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  width: 85%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+#certifications {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.certificateSwiper {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.certificateSwiper .swiper-slide.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  color: white;
+  width: 85%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.certificateSwiper .swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.certificateSwiper .overlay {
+  margin-top: 10px;
+}
+
+.swiper-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00ffcc;
+  opacity: 1;
+}
