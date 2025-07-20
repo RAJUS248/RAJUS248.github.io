@@ -15,6 +15,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
 </head>
@@ -161,11 +166,10 @@
   </div>
 </section>
 
- <!-- Projects Section with Scrolling -->
-<!-- Project Section -->
+<!-- Projects Section -->
 <section id="projects">
   <h2>🚀 Projects</h2>
-  <div class="swiper mySwiper">
+  <div class="swiper projectSwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <img src="Nail.jpg" alt="Project 1">
@@ -179,83 +183,55 @@
         <p>Real-time nail disease detection using YOLOv8.</p>
         <a href="#">🔗 View Code</a>
       </div>
-      <div class="swiper-slide">
-        <img src="Nail.jpg" alt="Project 2">
-        <h3>Nail Disease Detection</h3>
-        <p>Real-time nail disease detection using YOLOv8.</p>
-        <a href="#">🔗 View Code</a>
-      </div>
-      <div class="swiper-slide">
-        <img src="Nail.jpg" alt="Project 2">
-        <h3>Nail Disease Detection</h3>
-        <p>Real-time nail disease detection using YOLOv8.</p>
-        <a href="#">🔗 View Code</a>
-      </div>
-      <!-- Add more slides -->
+      <!-- Add more slides as needed -->
     </div>
+
+    <!-- Dots Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
 
 
 
+
+
+
       <section id="certifications" class="section">
-        <h2>📜 My Certificates</h2>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide card">
-              <img src="Aitm.jpg" alt="Cert 1" />
-              <div class="overlay">
-                <h4>Python for Beginners</h4>
-                <p>Great Learning</p>
-              </div>
-            </div>
-            <div class="swiper-slide card">
-              <img src="AWS.jpg" alt="Cert 2" />
-              <div class="overlay">
-                <h4>Web Dev Bootcamp</h4>
-                <p>Udemy</p>
-              </div>
-            </div>
-            <div class="swiper-slide card">
-              <img src="ibm.png" alt="Cert 2" />
-              <div class="overlay">
-                <h4>Web Dev Bootcamp</h4>
-                <p>Udemy</p>
-              </div>
-            </div>
-            <div class="swiper-slide card">
-              <img src="research.png" alt="Cert 2" />
-              <div class="overlay">
-                <h4>Web Dev Bootcamp</h4>
-                <p>Udemy</p>
-              </div>
-            </div>
-            <div class="swiper-slide card">
-              <img src="ROOMAN.png" alt="Cert 2" />
-              <div class="overlay">
-                <h4>Web Dev Bootcamp</h4>
-                <p>Udemy</p>
-              </div>
-            </div>
-            <div class="swiper-slide card">
-              <img src="skillindia.png" alt="Cert 2" />
-              <div class="overlay">
-                <h4>Web Dev Bootcamp</h4>
-                <p>Udemy</p>
-              </div>
-            </div>
-            <div class="swiper-slide card">
-              <img src="Wadhwani.jpg" alt="Cert 2" />
-              <div class="overlay">
-                <h4>Web Dev Bootcamp</h4>
-                <p>Udemy</p>
-              </div>
-            </div>
-            <!-- Add more slides if needed -->
-          </div>
+  <h2>📜 My Certificates</h2>
+
+  <!-- Certificate Swiper -->
+  <div class="swiper certificateSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide card">
+        <img src="Aitm.jpg" alt="Cert 1" />
+        <div class="overlay">
+          <h4>Python for Beginners</h4>
+          <p>Great Learning</p>
         </div>
-      </section>
+      </div>
+      <div class="swiper-slide card">
+        <img src="AWS.jpg" alt="Cert 2" />
+        <div class="overlay">
+          <h4>Web Dev Bootcamp</h4>
+          <p>Udemy</p>
+        </div>
+      </div>
+      <div class="swiper-slide card">
+        <img src="ibm.png" alt="Cert 3" />
+        <div class="overlay">
+          <h4>IBM Certificate</h4>
+          <p>IBM SkillsBuild</p>
+        </div>
+      </div>
+      <!-- Add more slides as needed -->
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
 
       <section id="contact" class="section">
         <h2>Contact</h2>
@@ -264,27 +240,54 @@
     </main>
   </div>
 
-  <!-- JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- JS for Navbar Toggle and Swiper -->
   <script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    centeredSlides: true,
+  var swiper = new Swiper(".projectSwiper", {
+    slidesPerView: 1.1,
     spaceBetween: 20,
-    loop: true,
+    centeredSlides: true,
     grabCursor: true,
+    pagination: {
+      el: ".projectSwiper .swiper-pagination",
+      clickable: true,
+    },
     breakpoints: {
       768: {
-        slidesPerView: 2,
-        centeredSlides: false,
+        slidesPerView: 2.2,
       },
       1024: {
         slidesPerView: 3,
-        centeredSlides: false,
+      }
+    }
+  });
+
+  // Certificate swiper
+  var certificateSwiper = new Swiper(".certificateSwiper", {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    grabCursor: true,
+    pagination: {
+      el: ".certificateSwiper .swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2.2,
+      },
+      1024: {
+        slidesPerView: 3,
       }
     }
   });
 </script>
+
+
+
+
 
   
 </body>
