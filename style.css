@@ -1131,7 +1131,7 @@ input:focus, textarea:focus {
   padding: 2rem 1rem;
   background-color: #121212;
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .swiper {
@@ -1216,7 +1216,7 @@ input:focus, textarea:focus {
 
 #certifications {
   padding: 40px 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .certificateSwiper {
@@ -1258,3 +1258,40 @@ input:focus, textarea:focus {
   background: #00ffcc;
   opacity: 1;
 }
+
+.social-icons {
+  display: flex;
+  flex-direction: row;     /* Force horizontal layout */
+  justify-content: center; /* Optional: center horizontally */
+  align-items: center;     /* Optional: center vertically */
+  gap: 16px;               /* Add spacing between icons */
+  margin-top: 20px;
+}
+
+.icon-link {
+  text-decoration: none;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.icon-circle i {
+  font-size: 24px;
+  color: white;
+}
+
+.icon-circle:hover {
+  background-color: #ffffff30;
+  transform: scale(1.1);
+}
+
+
+
