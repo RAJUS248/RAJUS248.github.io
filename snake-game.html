@@ -158,8 +158,9 @@ highScoreEl.textContent = `🏆 High Score: ${highScore}`;
       let snakeX = snake[0].x;
       let snakeY = snake[0].y;
 
-      if (direction === "LEFT") snakeX -= box;
       if (direction === "UP") snakeY -= box;
+      if (direction === "LEFT") snakeX -= box;
+      
       if (direction === "RIGHT") snakeX += box;
       if (direction === "DOWN") snakeY += box;
 
