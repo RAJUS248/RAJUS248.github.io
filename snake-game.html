@@ -31,9 +31,9 @@
 
     .score-container {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 1rem;
-      flex-wrap: wrap;
       justify-content: center;
     }
 
@@ -43,6 +43,7 @@
       padding: 10px 20px;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+      min-width: 140px;
     }
 
     canvas {
@@ -52,9 +53,14 @@
 
     .controls {
       display: none;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
       margin-top: 1rem;
+    }
+
+    .control-row {
+      display: flex;
       gap: 0.5rem;
     }
 
@@ -66,6 +72,13 @@
       font-size: 1rem;
       border-radius: 8px;
       width: 80px;
+      font-weight: bold;
+      box-shadow: 0 4px #008040;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px #008040;
     }
 
     @media (max-width: 600px) {
@@ -80,7 +93,7 @@
   <div id="info">Eat red blocks to grow. Game speeds up as score increases. Use arrow keys (or buttons below) to control the snake.</div>
 
   <div class="score-container">
-    <div id="highScore" class="score-box">🏆 High Score: 0</div>
+    <div id="highScore" class="score-box" style="text-align: left;">🏆 High Score: 0</div>
     <div id="score" class="score-box">Score: 0 | Level: 1</div>
   </div>
 
@@ -88,12 +101,14 @@
 
   <!-- Mobile Controls -->
   <div class="controls">
-    <button class="btn" onclick="setDirection('UP')">⬆️ Up</button>
-    <div style="display: flex; gap: 0.5rem;">
-      <button class="btn" onclick="setDirection('LEFT')">⬅️ Left</button>
-      <button class="btn" onclick="setDirection('RIGHT')">➡️ Right</button>
+    <div class="control-row">
+      <button class="btn" onclick="setDirection('LEFT')">⬅️</button>
+      <button class="btn" onclick="setDirection('UP')">⬆️</button>
+      <button class="btn" onclick="setDirection('RIGHT')">➡️</button>
     </div>
-    <button class="btn" onclick="setDirection('DOWN')">⬇️ Down</button>
+    <div class="control-row">
+      <button class="btn" onclick="setDirection('DOWN')">⬇️</button>
+    </div>
   </div>
 
   <script>
