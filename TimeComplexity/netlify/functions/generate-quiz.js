@@ -7,7 +7,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // --- CRITICAL CHANGE: Reduce the request to a manageable size (50 questions) ---
 // Define the detailed prompt for 50 questions
 const QUIZ_GENERATION_PROMPT = `
-Generate a JSON array of exactly 10 unique multiple-choice questions about Time Complexity. The questions must be distributed roughly evenly among the complexities O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), and O(n!). 
+Generate a JSON array of exactly 5 unique multiple-choice questions about Time Complexity. The questions must be distributed roughly evenly among the complexities O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), and O(n!). 
 
 Each object in the array must have the following keys:
 1. 'complexity': The correct Big-O complexity (e.g., 'O(N^2)').
@@ -92,4 +92,5 @@ exports.handler = async (event, context) => {
         };
     }
 };
+
 
