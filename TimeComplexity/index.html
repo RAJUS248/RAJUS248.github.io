@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Complexity Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Time Complexity Quiz</h1>
+        
+        <div id="quiz-controls">
+            <label for="language-select">Practice Language:</label>
+            <select id="language-select" class="btn">
+                <option value="java" selected>Java</option>
+                <option value="python">Python</option>
+                <option value="c">C</option>
+            </select>
+        </div>
+
+        <div id="quiz-question-area" class="quiz-area">
+            <p id="question-number">Question 1</p>
+            <div id="code-snippet-container">
+                <pre><code id="code-snippet" class="language-java">
+// Code will appear here...
+                </code></pre>
+            </div>
+            
+            <div id="options-container" class="options-grid">
+                </div>
+            
+            <p id="feedback" class="feedback-message"></p>
+            
+            <button id="next-button" class="btn" style="display: none;">Next Question</button>
+        </div>
+
+        <div id="result-area" class="result-area" style="display: none;">
+            <h2>Quiz Complete (or Quiz Restarted)!</h2>
+            <p id="final-score">Your Score: 0 / 0</p>
+            <button id="restart-button" class="btn">Restart Quiz / Change Language</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
