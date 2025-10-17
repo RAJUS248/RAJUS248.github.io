@@ -247,15 +247,15 @@ function generateCode(type, lang, names, params) {
 
 // The base set of 9 complexity templates (without code, just type and answer)
 const baseQuizTemplates = [
-    { type: 'O(1)-1', answer: "O(1)", complexity: 'O(1)', options: ["O(N)", "O(1)", "O(log N)", "O(N^2)"], explanation: "Array access at a fixed index is a single, constant-time operation (**O(1)**)." },
-    { type: 'O(1)-2', answer: "O(1)", complexity: 'O(1)', options: ["O(N log N)", "O(N^2)", "O(1)", "O(N)"], explanation: "Basic arithmetic operations take a fixed amount of time, resulting in **O(1)** constant complexity." },
-    { type: 'O(log N)-1', answer: "O(log N)", complexity: 'O(log N)', options: ["O(N)", "O(N log N)", "O(N^2)", "O(log N)"], explanation: "The loop variable is multiplied by a constant, causing the number of iterations to scale logarithmically, resulting in **O(log N)**." },
-    { type: 'O(N)-1', answer: "O(N)", complexity: 'O(N)', options: ["O(N)", "O(1)", "O($N^3$)", "O(N log N)"], explanation: "A single loop where the number of iterations is directly proportional to N, resulting in **O(N)** linear time." },
-    { type: 'O(N)-2', answer: "O(N)", complexity: 'O(N)', options: ["O(N^2)", "O(N)", "O(log N)", "O(1)"], explanation: "Sequential O(N) loops are additive ($O(N)+O(N)$), which simplifies to **O(N)**." },
-    { type: 'O(N log N)-1', answer: "O(N log N)", complexity: 'O(N log N)', options: ["O(N^2)", "O(N log N)", "O(N)", "O(log N)"], explanation: "The outer $O(N)$ loop multiplied by the inner $O(\log N)$ loop yields the total complexity: **O(N log N)**." },
-    { type: 'O(N^2)-1', answer: "O(N^2)", complexity: 'O(N^2)', options: ["O(N)", "O(N log N)", "O(N^2)", "O($N^3$)"], explanation: "A nested loop where both run proportional to N results in **O(N^2)** (quadratic) time." },
-    { type: 'O(N^2)-2', answer: "O(N^2)", complexity: 'O(N^2)', options: ["O(N^2)", "O(N)", "O(2^N)", "O(N log N)"], explanation: "Even a triangular nested loop ($N + (N-1) + ... + 1$) is still dominated by the $N^2$ term, which simplifies to **O(N^2)**." },
-    { type: 'O(N^3)-1', answer: "O($N^3$)", complexity: 'O(N^3)', options: ["O(N^2)", "O(N log N)", "O($N^3$)", "O(N!)"], explanation: "A triple nested loop means $N \times N \times N$ operations, leading to cubic time complexity: **O($N^3$)**." }
+    { type: 'O(1)-1', answer: "O(1)", complexity: 'O(1)', options: ["O(N)", "O(1)", "O(log N)", "O(N^2)"], explanation: "Array access at a fixed index is a single, constant-time operation (O(1))." },
+    { type: 'O(1)-2', answer: "O(1)", complexity: 'O(1)', options: ["O(N log N)", "O(N^2)", "O(1)", "O(N)"], explanation: "Basic arithmetic operations take a fixed amount of time, resulting in O(1) constant complexity." },
+    { type: 'O(log N)-1', answer: "O(log N)", complexity: 'O(log N)', options: ["O(N)", "O(N log N)", "O(N^2)", "O(log N)"], explanation: "The loop variable is multiplied by a constant, causing the number of iterations to scale logarithmically, resulting in O(log N)." },
+    { type: 'O(N)-1', answer: "O(N)", complexity: 'O(N)', options: ["O(N)", "O(1)", "O(N^3)", "O(N log N)"], explanation: "A single loop where the number of iterations is directly proportional to N, resulting in O(N) linear time." },
+    { type: 'O(N)-2', answer: "O(N)", complexity: 'O(N)', options: ["O(N^2)", "O(N)", "O(log N)", "O(1)"], explanation: "Sequential O(N) loops are additive (O(N)+O(N)), which simplifies to O(N)." },
+    { type: 'O(N log N)-1', answer: "O(N log N)", complexity: 'O(N log N)', options: ["O(N^2)", "O(N log N)", "O(N)", "O(log N)"], explanation: "The outer O(N) loop multiplied by the inner O(\log N) loop yields the total complexity: O(N log N)." },
+    { type: 'O(N^2)-1', answer: "O(N^2)", complexity: 'O(N^2)', options: ["O(N)", "O(N log N)", "O(N^2)", "O(N^3)"], explanation: "A nested loop where both run proportional to N results in O(N^2) (quadratic) time." },
+    { type: 'O(N^2)-2', answer: "O(N^2)", complexity: 'O(N^2)', options: ["O(N^2)", "O(N)", "O(2^N)", "O(N log N)"], explanation: "Even a triangular nested loop (N + (N-1) + ... + 1) is still dominated by the N^2 term, which simplifies to O(N^2)." },
+    { type: 'O(N^3)-1', answer: "O(N^3)", complexity: 'O(N^3)', options: ["O(N^2)", "O(N log N)", "O(N^3)", "O(N!)"], explanation: "A triple nested loop means N \times N \times N operations, leading to cubic time complexity: O(N^3)." }
 ];
 
 const MAX_QUESTIONS = 100;
@@ -398,7 +398,7 @@ function checkAnswer(selectedButton, selectedOption, question) {
         selectedButton.classList.add('correct');
         feedbackElement.classList.remove('wrong');
         feedbackElement.classList.add('correct');
-        feedbackElement.innerHTML = `**Correct!** 🎉 ${question.explanation}`;
+        feedbackElement.innerHTML = `Correct! 🎉 ${question.explanation}`;
     } else {
         selectedButton.classList.add('wrong');
         
@@ -410,7 +410,7 @@ function checkAnswer(selectedButton, selectedOption, question) {
 
         feedbackElement.classList.remove('correct');
         feedbackElement.classList.add('wrong');
-        feedbackElement.innerHTML = `**Wrong.** 😔 The correct answer is **${question.answer}**. <div class="explanation">${question.explanation}</div>`;
+        feedbackElement.innerHTML = `Wrong. 😔 The correct answer is ${question.answer}. <div class="explanation">${question.explanation}</div>`;
     }
 
     feedbackElement.style.display = 'block';
