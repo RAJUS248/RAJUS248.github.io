@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Complexity Quiz</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Time Complexity Quiz</h1>
+        
+        <div id="notes-area" class="quiz-area">
+            <h2>📝 Time Complexity Fundamentals</h2>
+            <p>Time complexity uses **Big O Notation** ($O$) to describe how the **runtime** of an algorithm grows as the size of the input (usually denoted as **$N$**) increases. It measures the **rate of growth** of operations.</p>
+            
+            <h3>Key Concepts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Big O</th>
+                        <th>Name</th>
+                        <th>Code Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>$O(1)$</td><td>Constant Time</td><td>Fixed operations (e.g., array access by index).</td></tr>
+                    <tr><td>$O(\log N)$</td><td>Logarithmic Time</td><td>Loop counter multiplied/divided (e.g., Binary Search).</td></tr>
+                    <tr><td>$O(N)$</td><td>Linear Time</td><td>Single loop iterating $N$ times.</td></tr>
+                    <tr><td>$O(N \log N)$</td><td>Linearithmic Time</td><td>$O(N)$ loop containing an $O(\log N)$ operation (e.g., Merge Sort).</td></tr>
+                    <tr><td>$O(N^2)$</td><td>Quadratic Time</td><td>Two nested loops, both running up to $N$.</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>How to Analyze Code</h3>
+            <ol>
+                <li>**Single Loop:** $O(N)$</li>
+                <li>**Nested Loops:** $O(N^2)$, $O(N^3)$, etc.</li>
+                <li>**Logarithmic Growth:** If the loop counter is multiplied or divided by a constant, it's $O(\log N)$.</li>
+                <li>**Dominant Terms:** Keep the highest order term and drop constants (e.g., $O(N^2 + N) \rightarrow O(N^2)$).</li>
+            </ol>
+            <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #dc3545;">Read these notes carefully before you begin!</p>
+            <button id="start-quiz-button" class="btn">Start Quiz</button>
+        </div>
+        <div id="quiz-controls" style="display: none;">
+            <label for="language-select">Practice Language:</label>
+            <select id="language-select" class="btn">
+                <option value="java" selected>Java</option>
+                <option value="python">Python</option>
+                <option value="c">C</option>
+            </select>
+        </div>
+
+        <div id="quiz-question-area" class="quiz-area" style="display: none;">
+            <p id="question-number">Question 1</p>
+            <div id="code-snippet-container">
+                <pre><code id="code-snippet" class="language-java">
+// Code will appear here...
+                </code></pre>
+            </div>
+            
+            <div id="options-container" class="options-grid">
+                </div>
+            
+            <p id="feedback" class="feedback-message"></p>
+            
+            <button id="next-button" class="btn" style="display: none;">Next Question</button>
+        </div>
+
+        <div id="result-area" class="result-area" style="display: none;">
+            <h2>Quiz Complete (or Quiz Restarted)!</h2>
+            <p id="final-score">Your Score: 0 / 0</p>
+            <button id="restart-button" class="btn">Restart Quiz / Change Language</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

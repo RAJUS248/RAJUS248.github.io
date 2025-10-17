@@ -1,0 +1,328 @@
+/* General Reset and Font */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    background-color: #f4f4f9; /* A light background for the page */
+}
+
+.quiz-container {
+    width: 90%; 
+    max-width: 700px; 
+    margin: 20px; /* Margins for spacing on desktop, adjusted for mobile */
+    box-sizing: border-box;
+    min-height: auto;
+    
+    background-color: #fff; /* Solid white background for the quiz box */
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+    position: relative; /* IMPORTANT: Allows positioning for pseudo-element */
+    overflow: hidden; /* Ensures the background image doesn't bleed out */
+}
+
+/* --- NEW: Subtle Big-O Graph as a Watermark/Corner Element --- */
+.quiz-container::before {
+    content: ""; /* Essential for pseudo-elements */
+    background-image: url(''); /* Your graph image */
+    background-repeat: no-repeat;
+    background-size: contain; /* Scales down to fit without cropping */
+    background-position: bottom right; /* Position in the bottom right corner */
+    opacity: 0.1; /* Make it very subtle/faded */
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place it behind other content */
+    pointer-events: none; /* Allows clicks/interactions with elements above it */
+}
+/* ----------------------------------------------------------- */
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 10px; 
+    font-size: 1.5em; 
+    position: relative; /* Ensure text is above pseudo-element */
+    z-index: 1;
+}
+
+/* Quiz Controls */
+#quiz-controls {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-bottom: 15px; 
+    padding: 5px 0; 
+    border-bottom: 1px solid #eee;
+    position: relative; /* Ensure controls are above pseudo-element */
+    z-index: 1;
+}
+
+#quiz-controls label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+#language-select {
+    width: 100%; 
+    max-width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-left: 0; 
+    box-sizing: border-box;
+    background-color: #f9f9f9; 
+    color: #333;
+    position: relative; /* Ensure select is above pseudo-element */
+    z-index: 1;
+}
+
+/* Code Snippet Styling */
+#code-snippet-container {
+    padding: 8px; 
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow-x: auto; 
+    position: relative; 
+    z-index: 1; /* Ensure code is above pseudo-element */
+}
+
+/* Prism.js code block background */
+#code-snippet-container pre[class*="language-"] {
+    background-color: #272822 !important; 
+    padding: 10px; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#code-snippet {
+    font-size: 0.85em; 
+    line-height: 1.4;
+}
+
+/* Options Grid Layout */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 8px; 
+    margin-bottom: 10px; 
+    position: relative; /* Ensure options are above pseudo-element */
+    z-index: 1;
+}
+
+/* Button Styling - Keep buttons solid white for best contrast */
+.btn {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #007bff;
+    background-color: #fff; 
+    color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; 
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: normal; 
+    height: auto; 
+    line-height: 1.2;
+    position: relative; /* Ensure buttons are above pseudo-element */
+    z-index: 1;
+}
+
+/* Hover/Focus State */
+.btn:not([disabled]):hover,
+.btn:not([disabled]):focus {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Correct Answer Styling */
+.btn.correct {
+    background-color: #28a745; /* Green */
+    color: white;
+    border-color: #28a745;
+}
+
+/* Wrong Answer Styling */
+.btn.wrong {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border-color: #dc3545;
+    opacity: 0.8; 
+}
+
+/* Disabled State */
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* Feedback Messages */
+.feedback-message {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5px; 
+    font-size: 0.9em;
+    position: relative; /* Ensure feedback is above pseudo-element */
+    z-index: 1;
+}
+
+.feedback-message.correct {
+    background-color: #e6ffed;
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.feedback-message.wrong {
+    background-color: #ffe6e8;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.explanation {
+    margin-top: 5px; 
+    padding: 8px;
+    background-color: #f0f8ff;
+    border-left: 5px solid #007bff;
+    font-size: 0.85em; 
+    text-align: left;
+}
+
+/* Next/Restart Button */
+#next-button, #restart-button {
+    margin-top: 10px; 
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+    position: relative; /* Ensure buttons are above pseudo-element */
+    z-index: 1;
+}
+
+#next-button:hover, #restart-button:hover {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+}
+
+
+/* Result Area Styling */
+.result-area {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#final-score {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    margin: 15px 0;
+}
+
+
+/* DESKTOP/TABLET OPTIMIZATION (min-width: 600px) */
+@media (min-width: 600px) {
+    body {
+        align-items: center; 
+    }
+    .quiz-container {
+        margin: 20px auto; 
+        min-height: auto;
+        padding: 25px;
+    }
+    #quiz-controls {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+    #language-select {
+        width: auto; 
+        max-width: 200px;
+        margin-left: 15px;
+    }
+    .options-grid {
+        grid-template-columns: 1fr 1fr; 
+        gap: 15px;
+    }
+    #code-snippet {
+        font-size: 1em; 
+    }
+}
+/* ... existing styles ... */
+
+/* Button Styling - Keep buttons solid white for best contrast */
+.btn {
+    /* ... existing btn styles ... */
+    position: relative; 
+    z-index: 1;
+}
+
+/* NEW STYLES FOR NOTES AREA */
+#notes-area h2, #notes-area h3 {
+    color: #007bff;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#notes-area p, #notes-area li {
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+#notes-area table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+#notes-area th, #notes-area td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+#notes-area th {
+    background-color: #f2f2f2;
+}
+
+#notes-area ol {
+    margin: 10px 0 20px 20px;
+    padding-left: 20px;
+}
+
+#notes-area li {
+    margin-bottom: 5px;
+}
+
+/* Styling for the Start Quiz Button */
+#start-quiz-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+#start-quiz-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* ... existing styles ... */
