@@ -39,14 +39,14 @@
             
             <h3>How to Analyze Code Complexity (Big O)</h3>
             <ol>
-                <li><strong>Constant Time Operations: O(1)</strong> — Occurs when the number of operations is fixed, regardless of the input size $N$ (e.g., array/list access by index, basic arithmetic).</li>
-                <li><strong>Single Loop: O(N)</strong> — The code iterates through the input once. The complexity grows **linearly** with $N$.</li>
-                <li><strong>Logarithmic Growth: O(\log N)</strong> — The loop counter is repeatedly **multiplied or divided** by a constant, effectively halving the problem space in each step (e.g., Binary Search).</li>
-                <li><strong>Nested Loops: O(N^2), O(N^3), etc.</strong> — Two nested loops usually result in **Quadratic Time** $O(N^2)$. Three nested loops result in **Cubic Time** $O(N^3)$.</li>
-                <li><strong>Divide and Conquer (Merge/Quick Sort): O(N \log N)</strong> — Occurs when an $O(N)$ operation is performed on a divided problem, often seen in efficient sorting algorithms.</li>
-                <li><strong>Exponential Growth: O(2^N)</strong> — Typically occurs in brute-force recursive solutions where the problem space **doubles** with each addition to $N$ (e.g., recursive Fibonacci, finding subsets).</li>
-                <li><strong>Factorial Growth: O(N!)</strong> — Extremely slow growth, involving the generation of **all permutations** of an input (e.g., brute-force Traveling Salesman Problem).</li>
-                <li><strong>Dominant Terms:</strong> When combining terms, keep the highest order term and drop constants (e.g., $O(N^2 + N) \rightarrow O(N^2)$).</li>
+                <li><strong>Constant Time Operations: O(1)</strong> — Occurs when the number of operations is fixed, regardless of the input size N (e.g., array/list access by index, basic arithmetic).</li>
+                <li><strong>Single Loop: O(N)</strong> — The code iterates through the input once. The complexity grows linearly with N.</li>
+                <li><strong>Logarithmic Growth: O(\log N)</strong> — The loop counter is repeatedly multiplied or divided by a constant, effectively halving the problem space in each step (e.g., Binary Search).</li>
+                <li><strong>Nested Loops: O(N^2), O(N^3), etc.</strong> — Two nested loops usually result in Quadratic Time O(N^2). Three nested loops result in Cubic Time O(N^3).</li>
+                <li><strong>Divide and Conquer (Merge/Quick Sort): O(N \log N)</strong> — Occurs when an O(N) operation is performed on a divided problem, often seen in efficient sorting algorithms.</li>
+                <li><strong>Exponential Growth: O(2^N)</strong> — Typically occurs in brute-force recursive solutions where the problem space doubles with each addition to N (e.g., recursive Fibonacci, finding subsets).</li>
+                <li><strong>Factorial Growth: O(N!)</strong> — Extremely slow growth, involving the generation of all permutations of an input (e.g., brute-force Traveling Salesman Problem).</li>
+                <li><strong>Dominant Terms:</strong> When combining terms, keep the highest order term and drop constants (e.g., O(N^2 + N) \rightarrow O(N^2)).</li>
             </ol>
             <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #dc3545;">Read these notes carefully before you begin!</p>
             <button id="start-quiz-button" class="btn">Start Quiz</button>
