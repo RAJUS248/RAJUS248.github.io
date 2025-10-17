@@ -1,0 +1,16 @@
+{
+  "name": "timecomplexity-copy",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/genai": "^1.25.0",
+    "netlify-cli": "^23.9.1"
+  }
+}
