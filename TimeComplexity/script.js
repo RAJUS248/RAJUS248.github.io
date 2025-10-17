@@ -3,7 +3,7 @@
 // where you securely call the Gemini API and return the 500 question JSON.
 const API_ENDPOINT = '/.netlify/functions/generate-quiz'; 
 
-const MAX_QUESTIONS = 500; // Expected number of questions from the API
+const MAX_QUESTIONS = 50; // Expected number of questions from the API
 
 let allQuizData = []; // Will store the 500 questions fetched from the API
 let filteredQuizData = []; 
@@ -199,3 +199,4 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchQuizData();
     }
 });
+
