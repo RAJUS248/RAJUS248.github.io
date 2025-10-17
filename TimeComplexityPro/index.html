@@ -15,7 +15,7 @@
         
         <div id="notes-area" class="quiz-area">
             <h2>📝 Time Complexity Fundamentals</h2>
-            <p>Time complexity uses **Big O Notation** ($O$) to describe how the **runtime** of an algorithm grows as the size of the input (usually denoted as **$N$**) increases. It measures the **rate of growth** of operations.</p>
+            <p>Time complexity uses Big O Notation (O) to describe how the runtime of an algorithm grows as the size of the input (usually denoted as N) increases. It measures the rate of growth of operations.</p>
             
             <h3>Key Concepts</h3>
             <table>
@@ -27,20 +27,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>$O(1)$</td><td>Constant Time</td><td>Fixed operations (e.g., array access by index).</td></tr>
-                    <tr><td>$O(\log N)$</td><td>Logarithmic Time</td><td>Loop counter multiplied/divided (e.g., Binary Search).</td></tr>
-                    <tr><td>$O(N)$</td><td>Linear Time</td><td>Single loop iterating $N$ times.</td></tr>
-                    <tr><td>$O(N \log N)$</td><td>Linearithmic Time</td><td>$O(N)$ loop containing an $O(\log N)$ operation (e.g., Merge Sort).</td></tr>
-                    <tr><td>$O(N^2)$</td><td>Quadratic Time</td><td>Two nested loops, both running up to $N$.</td></tr>
+                    <tr><td>O(1)</td><td>Constant Time</td><td>Fixed operations (e.g., array access by index, dictionary lookup).</td></tr>
+                    <tr><td>O(\log N)</td><td>Logarithmic Time</td><td>Search space is halved in each step (e.g., Binary Search).</td></tr>
+                    <tr><td>O(N)</td><td>Linear Time</td><td>Single loop iterating N times (e.g., summing all elements in a list).</td></tr>
+                    <tr><td>O(N \log N)</td><td>Linearithmic Time</td><td>Efficient sorting algorithms (e.g., Merge Sort, Heap Sort).</td></tr>
+                    <tr><td>O(N^2)</td><td>Quadratic Time</td><td>Two nested loops, both running up to N (e.g., Bubble Sort, comparing all pairs).</td></tr>
+                    <tr><td>O(2^N)</td><td>Exponential Time</td><td>Brute-force searching all subsets (e.g., solving the Tower of Hanoi recursively).</td></tr>
+                    <tr><td>O(N!)</td><td>Factorial Time</td><td>Generating all possible permutations (e.g., brute-force Traveling Salesman Problem).</td></tr>
                 </tbody>
             </table>
             
-            <h3>How to Analyze Code</h3>
+            <h3>How to Analyze Code Complexity (Big O)</h3>
             <ol>
-                <li>**Single Loop:** $O(N)$</li>
-                <li>**Nested Loops:** $O(N^2)$, $O(N^3)$, etc.</li>
-                <li>**Logarithmic Growth:** If the loop counter is multiplied or divided by a constant, it's $O(\log N)$.</li>
-                <li>**Dominant Terms:** Keep the highest order term and drop constants (e.g., $O(N^2 + N) \rightarrow O(N^2)$).</li>
+                <li><strong>Constant Time Operations: O(1)</strong> — Occurs when the number of operations is fixed, regardless of the input size $N$ (e.g., array/list access by index, basic arithmetic).</li>
+                <li><strong>Single Loop: O(N)</strong> — The code iterates through the input once. The complexity grows **linearly** with $N$.</li>
+                <li><strong>Logarithmic Growth: O(\log N)</strong> — The loop counter is repeatedly **multiplied or divided** by a constant, effectively halving the problem space in each step (e.g., Binary Search).</li>
+                <li><strong>Nested Loops: O(N^2), O(N^3), etc.</strong> — Two nested loops usually result in **Quadratic Time** $O(N^2)$. Three nested loops result in **Cubic Time** $O(N^3)$.</li>
+                <li><strong>Divide and Conquer (Merge/Quick Sort): O(N \log N)</strong> — Occurs when an $O(N)$ operation is performed on a divided problem, often seen in efficient sorting algorithms.</li>
+                <li><strong>Exponential Growth: O(2^N)</strong> — Typically occurs in brute-force recursive solutions where the problem space **doubles** with each addition to $N$ (e.g., recursive Fibonacci, finding subsets).</li>
+                <li><strong>Factorial Growth: O(N!)</strong> — Extremely slow growth, involving the generation of **all permutations** of an input (e.g., brute-force Traveling Salesman Problem).</li>
+                <li><strong>Dominant Terms:</strong> When combining terms, keep the highest order term and drop constants (e.g., $O(N^2 + N) \rightarrow O(N^2)$).</li>
             </ol>
             <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #dc3545;">Read these notes carefully before you begin!</p>
             <button id="start-quiz-button" class="btn">Start Quiz</button>
