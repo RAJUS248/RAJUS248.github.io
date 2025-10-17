@@ -1,53 +1,74 @@
 /* General Reset and Font */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     color: #333;
-    margin: 0; /* REMOVED UNNECESSARY MARGINS */
+    margin: 0; /* Remove body margins */
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Aligns content to the top for better mobile space */
     min-height: 100vh;
-    box-sizing: border-box; /* Ensures padding/border are included in element's total width/height */
+    box-sizing: border-box;
+
+    background-color: #f4f4f9; 
 }
 
 .quiz-container {
-    background: #fff;
-    padding: 15px; /* Reduced padding for mobile space */
-    border-radius: 0; /* Remove border-radius on mobile for full screen width/height feel */
-    box-shadow: none; /* Remove shadow on mobile */
-    width: 100%; /* Take full width on mobile */
+    width: 100%; /* Make it 100% width on mobile */
     max-width: 700px; 
-    margin: 0; /* REMOVED UNNECESSARY MARGINS */
-    min-height: 100vh; /* Ensure container covers full screen height */
+    margin: 0; /* Remove margins on mobile */
     box-sizing: border-box;
+    min-height: 100vh; /* Make container full height on mobile */
+    
+    background-color: #fff; 
+    padding: 15px; 
+    border-radius: 0; /* Remove border-radius on mobile for edge-to-edge look */
+    box-shadow: none; /* Remove shadow on mobile */
+
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* --- Small Top-Right Chart (Fixed Placement) --- */
+#big-o-chart-small {
+    position: absolute;
+    top: 15px;      
+    right: 15px;    
+    width: 150px;   
+    height: 100px;  
+    
+    background-image: url('image_4ea9fc.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    z-index: 10; 
 }
 
 h1 {
     text-align: center;
     color: #007bff;
-    margin-bottom: 10px; /* Reduced margin */
-    font-size: 1.5em; /* Adjusted size for mobile */
+    margin-bottom: 10px; 
+    font-size: 1.5em; 
+    /* Adjust margin-right to prevent text from overlapping the chart on small screens */
+    margin-right: 160px; /* Space for the chart */
 }
 
 /* Quiz Controls */
 #quiz-controls {
     display: flex;
-    flex-direction: column; /* Stack controls vertically on small screens */
+    flex-direction: column; 
     align-items: flex-start;
-    margin-bottom: 15px; /* Reduced margin */
-    padding: 5px 0; /* Reduced vertical padding */
+    margin-bottom: 15px; 
+    padding: 5px 0; 
     border-bottom: 1px solid #eee;
 }
 
-#quiz-controls label {
-    margin-bottom: 5px;
-    font-size: 0.9em;
-}
-
+/* Ensure the language select box takes full width */
 #language-select {
-    width: 100%; /* Make select box full width */
+    width: 100%; 
     max-width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -55,34 +76,38 @@ h1 {
     font-size: 1em;
     margin-left: 0; 
     box-sizing: border-box;
+    background-color: #f9f9f9; 
+    color: #333;
 }
 
-/* Code Snippet Styling FIX */
+/* Code Snippet Styling - CRITICAL for preventing overflow */
 #code-snippet-container {
-    padding: 8px; /* Greatly reduced padding around code */
+    padding: 8px; 
     border-radius: 5px;
     margin-bottom: 15px;
-    overflow-x: auto; /* IMPORTANT: Allows horizontal scrolling if code is too wide */
-    position: relative; /* Context for children */
+    overflow-x: auto; /* Allows horizontal scroll for wide code blocks */
+    position: relative; 
 }
 
-#code-snippet-container pre {
+/* Prism.js code block background */
+#code-snippet-container pre[class*="language-"] {
+    background-color: #272822 !important; 
+    padding: 10px; 
     margin: 0;
-    padding: 10px; /* Adjusted padding within the code block */
-    white-space: pre; /* Use pre to maintain code structure, let overflow handle width */
+    box-sizing: border-box;
 }
 
 #code-snippet {
-    font-size: 0.85em; /* Slightly smaller font for better fit on small screens */
+    font-size: 0.85em; /* Smaller font on mobile helps fit */
     line-height: 1.4;
 }
 
 /* Options Grid Layout */
 .options-grid {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: 8px; /* Reduced gap between options */
-    margin-bottom: 10px; /* Reduced margin */
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 8px; /* Reduced gap */
+    margin-bottom: 10px; 
 }
 
 /* Button Styling */
@@ -90,89 +115,71 @@ h1 {
     width: 100%;
     padding: 10px 15px;
     border: 2px solid #007bff;
-    background-color: #fff;
+    background-color: #fff; 
     color: #007bff;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em; /* Maintained readability */
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    text-align: center;
+    font-size: 1em; 
     box-sizing: border-box;
-    white-space: normal; /* Allow text to wrap if options are long */
-    height: auto; /* Auto height based on content */
+    white-space: normal; /* Allow text wrapping for long options */
+    height: auto; 
     line-height: 1.2;
 }
 
-/* Feedback Messages */
+/* Feedback Messages - Reduced vertical space */
 .feedback-message {
     font-weight: bold;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    margin-top: 5px; /* Reduced top margin to save space */
+    margin-top: 5px; 
     font-size: 0.9em;
 }
 
 .explanation {
-    margin-top: 5px; /* Reduced margin */
+    margin-top: 5px; 
     padding: 8px;
     background-color: #f0f8ff;
     border-left: 5px solid #007bff;
-    font-size: 0.85em; /* Smaller font for explanation */
+    font-size: 0.85em; 
     text-align: left;
 }
 
-/* Next/Restart Button */
+/* Next/Restart Button - Reduced vertical space */
 #next-button, #restart-button {
-    margin-top: 10px; /* Reduced top margin to pull it up */
+    margin-top: 10px; 
     background-color: #28a745;
     color: white;
     border-color: #28a745;
-    /* Ensure this is the last visible element after feedback */
+    /* This button must be visible without scrolling after feedback */
 }
-
-/* Result Area */
-.result-area {
-    text-align: center;
-    padding: 20px;
-    border: 1px dashed #ccc;
-    border-radius: 5px;
-}
-
 
 /* DESKTOP/TABLET OPTIMIZATION (min-width: 600px) */
 @media (min-width: 600px) {
     body {
-        align-items: center; /* Center vertically again on large screens */
+        align-items: center; 
     }
     .quiz-container {
-        padding: 30px;
+        width: 90%; 
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 20px;
+        margin: 20px auto; 
         min-height: auto;
+        padding: 30px; /* Restore larger padding on desktop */
     }
+    /* Adjust h1 to use standard margin again on desktop */
     h1 {
-        font-size: 2em;
+        margin-right: 0; 
     }
-    #quiz-controls {
-        flex-direction: row; /* Horizontal controls on large screens */
-        align-items: center;
-        padding: 10px;
-    }
-    #language-select {
-        width: auto;
-        max-width: 200px;
-        margin-left: 10px;
+    #big-o-chart-small {
+        top: 30px; /* Adjust for larger padding on desktop */
+        right: 30px;
     }
     .options-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+        grid-template-columns: 1fr 1fr; 
         gap: 15px;
     }
-    #code-snippet-container {
-        padding: 15px;
-    }
     #code-snippet {
-        font-size: 1em; /* Normal font size */
+        font-size: 1em; 
     }
 }
