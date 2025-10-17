@@ -2,92 +2,87 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
-    color: #333; /* Default text color */
-    margin: 0;
+    color: #333;
+    margin: 0; /* REMOVED UNNECESSARY MARGINS */
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Full viewport height for centering */
+    align-items: flex-start; /* Aligns content to the top for better mobile space */
+    min-height: 100vh;
+    box-sizing: border-box; /* Ensures padding/border are included in element's total width/height */
 }
 
 .quiz-container {
     background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 700px; /* Slightly wider for code */
-    margin: 20px;
+    padding: 15px; /* Reduced padding for mobile space */
+    border-radius: 0; /* Remove border-radius on mobile for full screen width/height feel */
+    box-shadow: none; /* Remove shadow on mobile */
+    width: 100%; /* Take full width on mobile */
+    max-width: 700px; 
+    margin: 0; /* REMOVED UNNECESSARY MARGINS */
+    min-height: 100vh; /* Ensure container covers full screen height */
+    box-sizing: border-box;
 }
 
 h1 {
     text-align: center;
     color: #007bff;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 1.5em; /* Adjusted size for mobile */
 }
 
-/* Code Snippet Styling */
-#code-snippet-container {
-    /* Prism.js will handle the background and text color, so remove previous styles */
-    /* background-color: #eee; */ 
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    overflow-x: auto; 
-    /* The padding and border-radius are still useful for the container itself */
-}
-
-/* Ensure 'pre' and 'code' elements inside container don't get unwanted backgrounds/padding */
-#code-snippet-container pre {
-    margin: 0; /* Remove default margin from <pre> */
-}
-
-#code-snippet {
-    white-space: pre-wrap; 
-    font-family: 'Fira Code', 'Courier New', monospace; /* Fira Code for a modern look if available */
-    font-size: 15px; /* Slightly larger font */
-    line-height: 1.5;
-    /* Prism.js will manage its own background and color */
-    /* Ensure any text color here doesn't override Prism's tokens */
-}
-
-/* New styles for Quiz Controls (Language Selector) */
+/* Quiz Controls */
 #quiz-controls {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-bottom: 1px solid #eee; /* Lighter border for contrast */
+    flex-direction: column; /* Stack controls vertically on small screens */
+    align-items: flex-start;
+    margin-bottom: 15px; /* Reduced margin */
+    padding: 5px 0; /* Reduced vertical padding */
+    border-bottom: 1px solid #eee;
+}
+
+#quiz-controls label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
 }
 
 #language-select {
+    width: 100%; /* Make select box full width */
+    max-width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    flex-grow: 1; /* Allow it to take up space */
-    margin-left: 10px; /* Space between label and select */
-    max-width: 150px; /* Keep select box reasonably sized */
-    background-color: #f9f9f9; /* Light background for select */
-    color: #333;
+    font-size: 1em;
+    margin-left: 0; 
+    box-sizing: border-box;
 }
 
-/* Options Grid Layout - Flexible */
+/* Code Snippet Styling FIX */
+#code-snippet-container {
+    padding: 8px; /* Greatly reduced padding around code */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow-x: auto; /* IMPORTANT: Allows horizontal scrolling if code is too wide */
+    position: relative; /* Context for children */
+}
+
+#code-snippet-container pre {
+    margin: 0;
+    padding: 10px; /* Adjusted padding within the code block */
+    white-space: pre; /* Use pre to maintain code structure, let overflow handle width */
+}
+
+#code-snippet {
+    font-size: 0.85em; /* Slightly smaller font for better fit on small screens */
+    line-height: 1.4;
+}
+
+/* Options Grid Layout */
 .options-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-/* Media Query for Laptop/Desktop */
-@media (min-width: 600px) {
-    .options-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
-    }
+    grid-template-columns: 1fr; 
+    gap: 8px; /* Reduced gap between options */
+    margin-bottom: 10px; /* Reduced margin */
 }
 
 /* Button Styling */
@@ -99,19 +94,13 @@ h1 {
     color: #007bff;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1em; /* Maintained readability */
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     text-align: center;
-}
-
-.btn:hover:not(:disabled) {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
+    box-sizing: border-box;
+    white-space: normal; /* Allow text to wrap if options are long */
+    height: auto; /* Auto height based on content */
+    line-height: 1.2;
 }
 
 /* Feedback Messages */
@@ -120,42 +109,26 @@ h1 {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    margin-top: 15px;
-    display: none; /* Hidden by default */
-}
-
-.correct {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.wrong {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    margin-top: 5px; /* Reduced top margin to save space */
+    font-size: 0.9em;
 }
 
 .explanation {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 5px; /* Reduced margin */
+    padding: 8px;
     background-color: #f0f8ff;
     border-left: 5px solid #007bff;
-    font-size: 14px;
-    text-align: left; /* Align explanation text left */
+    font-size: 0.85em; /* Smaller font for explanation */
+    text-align: left;
 }
 
 /* Next/Restart Button */
 #next-button, #restart-button {
-    margin-top: 20px;
+    margin-top: 10px; /* Reduced top margin to pull it up */
     background-color: #28a745;
     color: white;
     border-color: #28a745;
-}
-
-#next-button:hover, #restart-button:hover {
-    background-color: #218838;
-    border-color: #218838;
+    /* Ensure this is the last visible element after feedback */
 }
 
 /* Result Area */
@@ -164,4 +137,42 @@ h1 {
     padding: 20px;
     border: 1px dashed #ccc;
     border-radius: 5px;
+}
+
+
+/* DESKTOP/TABLET OPTIMIZATION (min-width: 600px) */
+@media (min-width: 600px) {
+    body {
+        align-items: center; /* Center vertically again on large screens */
+    }
+    .quiz-container {
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        min-height: auto;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    #quiz-controls {
+        flex-direction: row; /* Horizontal controls on large screens */
+        align-items: center;
+        padding: 10px;
+    }
+    #language-select {
+        width: auto;
+        max-width: 200px;
+        margin-left: 10px;
+    }
+    .options-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+        gap: 15px;
+    }
+    #code-snippet-container {
+        padding: 15px;
+    }
+    #code-snippet {
+        font-size: 1em; /* Normal font size */
+    }
 }
