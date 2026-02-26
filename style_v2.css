@@ -1,0 +1,468 @@
+/* General Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+  background-color: #1e1e1e;
+  width: 250px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 0 10px 10px 0;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: block;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.sidebar .title {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.icon-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.icon-circle i {
+  font-size: 20px;
+  color: white;
+}
+
+.icon-circle:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+/* Main Content area */
+.main-content {
+  flex: 1;
+  padding: 20px 40px;
+  overflow-x: hidden;
+}
+
+/* Navbar styling (Desktop) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00d8ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links li a i {
+  display: none; 
+}
+
+.nav-links li a:hover {
+  color: #00d8ff;
+  text-shadow: 0 0 5px rgba(0, 216, 255, 0.4);
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #00d8ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Sections & Typography */
+.section {
+  margin-bottom: 50px;
+}
+
+.section h1, .section h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.download-resume {
+  margin-top: 25px;
+}
+
+.download-resume a {
+  display: inline-block;
+  background-color: #3f51b5;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-resume a:hover {
+  background-color: #2c387e;
+  transform: scale(1.05);
+}
+
+/* Skills container */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.skill-card i {
+  font-size: 2.5rem;
+  color: #fff;
+  transition: transform 0.5s ease;
+}
+
+.skill-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card:hover i {
+  color: #00ffcc;
+  transform: scale(1.1);
+}
+
+/* Education Container */
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.education-card {
+  width: 100%;
+  max-width: 320px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-left: 5px solid #3f51b5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.education-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.edu-icon {
+  font-size: 32px;
+  color: #3f51b5;
+  margin-bottom: 10px;
+}
+
+.education-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.education-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+/* Swiper Setup */
+.swiper {
+  width: 100%;
+  padding: 20px 0 40px 0;
+}
+
+.swiper-slide {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide-active {
+  transform: scale(1.02);
+}
+
+.swiper-slide img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.swiper-slide h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.swiper-slide p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.swiper-slide a {
+  background: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.swiper-slide a:hover {
+  background: #444;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  background: #888;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00ff88;
+}
+
+/* --- Certificate Cards Fix --- */
+/* This ensures the slide allows the image to be its natural height */
+/* --- Certificate Cards Fix (Picture Frame Method) --- */
+.certificateSwiper .swiper-wrapper {
+  align-items: stretch; /* Makes all the dark cards the exact same height in a row */
+}
+
+.certificateSwiper .swiper-slide {
+  height: 350px; /* Perfect uniform height for laptop */
+  padding: 15px;
+  background-color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* This forces the full image to shrink and fit perfectly inside the card, never cutting off */
+.certificateSwiper .swiper-slide img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: contain; 
+  margin-bottom: 0;
+  border-radius: 8px;
+}
+
+/* ========================================= */
+/* MOBILE RESPONSIVENESS & BOTTOM NAVBAR     */
+/* ========================================= */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .certificateSwiper .swiper-slide {
+    height: 300px; /* Slightly smaller box for mobile screens */
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-radius: 0;
+    padding: 20px;
+  }
+  
+  /* Add padding to the bottom so the final section isn't hidden behind the sticky navbar */
+  .main-content {
+    padding: 15px 15px 90px 15px; 
+  }
+
+  .logo {
+    display: none;
+  }
+
+  /* Bottom Navigation Bar Styling */
+  .navbar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a; 
+    border-top: 1px solid #333;
+    padding: 12px 0;
+    margin: 0;
+    z-index: 9999;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.5); 
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto; 
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: #999;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  /* Show icons on mobile */
+  .nav-links li a i {
+    display: block;
+    font-size: 20px;
+  }
+
+  .nav-links li a:hover {
+    color: #00d8ff;
+    text-shadow: none;
+  }
+
+  .nav-links li a::after {
+    display: none;
+  }
+
+  .skills-container {
+    justify-content: center;
+  }
+
+  /* Make Education cards swipeable horizontally on mobile to save space */
+  .education-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    gap: 15px;
+  }
+
+  .education-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .education-card {
+    flex: 0 0 85%; /* Takes up 85% of the screen width */
+    scroll-snap-align: center;
+    max-width: none;
+  }
+}
